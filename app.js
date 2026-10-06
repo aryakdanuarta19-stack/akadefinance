@@ -4,13 +4,15 @@
 
 /* ---------- Konstanta ---------- */
 const CATS = [
-  { id: 'food',      name: 'Food',      color: '#5492df' },
-  { id: 'transport', name: 'Transport', color: '#d66e48' },
-  { id: 'belanja',   name: 'Shopping',   color: '#49a47d' },
-  { id: 'tagihan',   name: 'Bills',   color: '#bf8737' },
-  { id: 'hiburan',   name: 'Fun',   color: '#d3678b' },
-  { id: 'kesehatan', name: 'Health', color: '#8f88d9' },
-  { id: 'lainnya',   name: 'Others',   color: '#6f7f8c' },
+  { id: 'food',      name: 'Food & Drink',   color: '#5492df' },
+  { id: 'kopi',      name: 'Coffee & Snack', color: '#b9743f' },
+  { id: 'belanja',   name: 'Shopping',       color: '#49a47d' },
+  { id: 'transport', name: 'Transport',      color: '#d66e48' },
+  { id: 'kesehatan', name: 'Health',         color: '#8f88d9' },
+  { id: 'hiburan',   name: 'Fun',            color: '#d3678b' },
+  { id: 'tagihan',   name: 'Bills',          color: '#bf8737' },
+  { id: 'cash',      name: 'Cash',           color: '#38a3bd' },
+  { id: 'lainnya',   name: 'Others',         color: '#6f7f8c' },
 ];
 const CAT = Object.fromEntries(CATS.map(c => [c.id, c]));
 const TYPES = {
@@ -28,17 +30,22 @@ const VIEWS = [
 ];
 
 const DICT_SRC = {
-  food: 'makan makanan sarapan nasi ayam bebek sate soto bakso mie mi indomie kentang goreng gorengan burger pizza kopi teh boba jus es susu roti kue snack cemilan camilan jajan warteg padang kfc mcd mcdonalds gofood grabfood shopeefood seblak martabak pecel rendang ikan seafood sushi ramen dimsum kebab geprek penyet nasgor rawon gado ketoprak bubur lontong tahu tempe telur sayur buah beras minyak gula garam bumbu air aqua galon minum minuman cokelat coklat donat cilok batagor siomay pempek cireng tekwan sop sup steak pasta salad katsu ricebowl dessert permen kerupuk keripik mixue starbucks janji kenangan fore chatime cafe kafe resto restoran warung kantin catering katering lauk',
-  transport: 'gojek grab gocar goride grabcar grabbike maxim ojek ojol bensin pertamax pertalite solar shell parkir tol etoll taksi taxi bluebird angkot bus busway transjakarta mrt lrt krl kereta kai tiket pesawat travel damri bengkel servis oli ban motor mobil sim stnk',
-  belanja: 'baju kaos celana jaket sepatu sandal tas dompet topi hijab skincare makeup kosmetik parfum sabun shampo sampo odol tisu deterjen shopee tokopedia lazada tiktokshop indomaret alfamart alfamidi supermarket minimarket belanja charger kabel casing headset earphone hp laptop mouse keyboard buku pulpen alat perabot kain bahan sablon aksesoris jam kacamata',
-  tagihan: 'listrik pln token pdam wifi indihome internet kuota paket pulsa kos kost kontrakan sewa cicilan angsuran kredit pajak bpjs asuransi iuran langganan subscription tagihan pascabayar domain hosting icloud premium adobe capcut canva chatgpt claude',
-  hiburan: 'nonton bioskop film cinema xxi cgv netflix spotify youtube disney vidio game steam topup diamond konser karaoke liburan wisata hotel staycation nongkrong hangout billiard bowling futsal badminton gym hobi mainan',
-  kesehatan: 'obat apotek apotik dokter klinik puskesmas vitamin suplemen masker periksa checkup gigi kacamata terapi pijat urut lab vaksin',
+  kopi: 'kopi coffee kopken kopsus latte cappuccino capucino americano espresso mocha mocca macchiato frappe frappuccino affogato vietnam tubruk luwak arabica robusta matcha boba bubble thai tea teh chatime mixue kokumi xiboba gulu haus menantea starbucks sbux kenangan fore tomoro janji jiwa kulo excelso jco dunkin cafe kafe coffeeshop snack snacks cemilan camilan jajan jajanan gorengan keripik kripik kerupuk krupuk chiki chitato lays qtela pringles popcorn biskuit biscuit wafer oreo cokelat coklat chocolate permen candy donat donut roti bread toast croissant pastry bakery cake kue brownies bolu cookies cookie pudding puding dessert es eskrim gelato icecream mcflurry sundae cilok cireng cimol batagor siomay somay risol risoles pastel lumpia tahu bakwan pisang molen martabak terang serabi klepon onde cakwe potato kentang fries wedges nugget sosis sausage corndog takoyaki tteokbokki dimsum bapao bakpao pao carica manisan asinan rujak buah fruit kacang nuts',
+  food: 'makan makanan makansiang makanmalam sarapan lunch dinner breakfast brunch meal food eat nasi rice ayam chicken bebek duck sapi beef kambing ikan fish seafood udang cumi kepiting lele gurame sate satay soto sop sup soup bakso baso mie mi mee noodle noodles indomie bakmi kwetiau bihun ramen udon pasta spaghetti pizza burger sandwich kebab shawarma steak sushi sashimi bento katsu teriyaki ricebowl geprek penyet goreng bakar rebus kukus nasgor rawon gudeg gado ketoprak karedok pecel lotek bubur lontong ketupat opor rendang gulai padang warteg warung kantin resto restoran restaurant kfc mcd mcdonalds mcdonald burgerking bk wendys hokben yoshinoya richeese sabana pizzahut dominos marugame solaria gofood grabfood shopeefood seblak sambal sambel lalapan pecelele tempe telur telor egg sayur sayuran salad capcay tumis beras minyak gula garam bumbu rempah kecap saos saus mayones susu milk yogurt yoghurt keju cheese air aqua galon mineral minum minuman drink drinks beverage jus juice smoothie soda cola coke sprite fanta pocari tehbotol tehpucuk catering katering lauk prasmanan nasibox nasikotak bekal',
+  transport: 'gojek grab gocar goride grabcar grabbike maxim indrive ojek ojol bensin pertamax pertalite pertamina dexlite solar shell vivo bbm fuel gas parkir parking tol toll etoll emoney flazz taksi taxi bluebird angkot bus bis busway transjakarta tj mrt lrt krl commuter kereta kai train tiket ticket pesawat flight garuda citilink lionair airasia batik travel shuttle damri xtrans bengkel servis service oli ban tambal cuci motor mobil sim stnk pajakmotor uber ferry kapal becak',
+  belanja: 'baju kaos kaus kemeja celana jeans rok dress jaket hoodie sweater sepatu sneakers sandal tas bag dompet wallet topi hijab jilbab kerudung mukena sarung kaoskaki daleman skincare serum toner sunscreen moisturizer facewash makeup lipstik kosmetik parfum perfume sabun shampo sampo shampoo conditioner odol pasta sikat tisu tissue deterjen detergent pewangi sunlight rinso molto pembalut popok shopee tokopedia tokped lazada blibli tiktokshop zalora uniqlo hm zara miniso indomaret alfamart alfamidi superindo hypermart transmart carrefour lottemart supermarket minimarket belanja shopping grocery groceries charger kabel cable casing headset earphone earbuds tws hp handphone iphone samsung xiaomi laptop macbook mouse keyboard monitor ssd flashdisk buku book novel pulpen pensil alat perabot furniture ikea kasur bantal sprei lampu kain bahan sablon aksesoris accessories jam watch kacamata cincin gelang kalung hadiah kado gift',
+  tagihan: 'listrik pln token pdam wifi indihome biznet firstmedia myrepublic internet kuota pulsa telkomsel xl axis indosat tri smartfren kos kost kosan kontrakan sewa rent cicilan angsuran kredit kpr paylater spaylater gopaylater kartukredit pajak pbb bpjs asuransi insurance iuran langganan subscription subs tagihan bill bills pascabayar domain hosting vps icloud googleone premium adobe capcut canva figma notion chatgpt claude gemini midjourney kling runway elevenlabs laundry sampah keamanan ipl arisan zakat spp ukt sekolah kuliah les kursus course',
+  hiburan: 'nonton bioskop film movie cinema xxi cgv cinepolis netflix spotify youtube disney hbo vidio viu wetv prime game games gaming steam playstation ps5 xbox nintendo topup diamond uc mlbb valorant konser concert tiket festival karaoke liburan holiday vacation wisata tour hotel hostel villa staycation airbnb nongkrong hangout billiard bowling futsal badminton minisoccer basket renang gym fitness yoga hobi hobby mainan toys lego komik manga dufan ancol museum zoo',
+  kesehatan: 'obat apotek apotik kimiafarma guardian watson century dokter doctor klinik clinic puskesmas rs rumahsakit hospital halodoc alodokter vitamin suplemen supplement masker periksa checkup medical gigi dentist behel terapi therapy pijat massage urut refleksi lab vaksin vaccine paracetamol panadol antangin tolakangin betadine plester salep minyakkayuputih kacamata softlens',
+  cash: 'tarik tariktunai withdraw withdrawal atm tunai cash setor setortunai deposit ewallet gopay ovo dana shopeepay linkaja flip jenius jago seabank bca bri bni mandiri bsi cimb permata admin biayaadmin fee',
 };
 const PHRASES = [
-  ['es krim', 'food'], ['ice cream', 'food'], ['air mineral', 'food'], ['kopi kenangan', 'food'], ['nasi goreng', 'food'], ['mie ayam', 'food'],
-  ['rumah sakit', 'kesehatan'], ['uang kos', 'tagihan'], ['bayar kos', 'tagihan'], ['top up', 'hiburan'], ['isi bensin', 'transport'],
+  ['tarik tunai', 'cash'], ['setor tunai', 'cash'], ['top up gopay', 'cash'], ['top up ovo', 'cash'], ['top up dana', 'cash'], ['top up shopeepay', 'cash'], ['topup gopay', 'cash'], ['topup ovo', 'cash'], ['topup dana', 'cash'], ['isi saldo', 'cash'], ['biaya admin', 'cash'], ['admin bank', 'cash'],
+  ['es krim', 'kopi'], ['ice cream', 'kopi'], ['kopi kenangan', 'kopi'], ['janji jiwa', 'kopi'], ['thai tea', 'kopi'], ['milk tea', 'kopi'], ['kentang goreng', 'kopi'], ['french fries', 'kopi'], ['pisang goreng', 'kopi'], ['roti bakar', 'kopi'],
+  ['air mineral', 'food'], ['nasi goreng', 'food'], ['mie ayam', 'food'], ['ayam goreng', 'food'], ['fried chicken', 'food'], ['fried rice', 'food'], ['burger king', 'food'], ['pizza hut', 'food'], ['es teh', 'food'], ['teh botol', 'food'], ['makan siang', 'food'], ['makan malam', 'food'],
+  ['rumah sakit', 'kesehatan'], ['kimia farma', 'kesehatan'], ['uang kos', 'tagihan'], ['bayar kos', 'tagihan'], ['kartu kredit', 'tagihan'], ['top up', 'hiburan'], ['isi bensin', 'transport'], ['tiket pesawat', 'transport'], ['tiket kereta', 'transport'],
 ];
+const INVEST = new Set('btc bitcoin eth ethereum solana bnb xrp doge usdt usdc crypto kripto saham stock stocks reksadana reksa rdn obligasi sbn sukuk deposito emas gold antam logammulia invest investasi investing nabung tabungan bibit ajaib pluang indodax tokocrypto binance pintu stockbit ipot bareksa'.split(' '));
 const DICT = new Map();
 for (const [cat, words] of Object.entries(DICT_SRC)) for (const w of words.split(' ')) if (!DICT.has(w)) DICT.set(w, cat);
 
@@ -103,15 +110,38 @@ function parseAmount(tok) {
   return val > 0 ? val : null;
 }
 
-function categorize(desc) {
+const stem = w => w.replace(/(nya|ku|mu)$/, '');
+function dictCat(w) {
+  if (DICT.has(w)) return DICT.get(w);
+  const t = stem(w);
+  if (t !== w && t.length >= 3 && DICT.has(t)) return DICT.get(t);
+  return null;
+}
+function categorize(desc, skipLearned) {
   const n = norm(desc);
   if (!n) return 'lainnya';
-  if (state.kw[n]) return state.kw[n].cat;
   const words = n.split(' ');
-  for (const w of words) if (state.kw[w]) return state.kw[w].cat;
+  if (!skipLearned) {
+    if (state.kw[n]) return state.kw[n].cat;
+    for (const w of words) if (state.kw[w]) return state.kw[w].cat;
+  }
   for (const [p, c] of PHRASES) if (n.includes(p)) return c;
-  for (const w of words) if (DICT.has(w)) return DICT.get(w);
+  for (const w of words) { const c = dictCat(w); if (c) return c; }
+  for (let i = 0; i < words.length - 1; i++) { const c = dictCat(words[i] + words[i + 1]); if (c) return c; }
   return 'lainnya';
+}
+const isInvest = desc => norm(desc).split(' ').some(w => INVEST.has(w));
+const investTarget = desc => desc.replace(/^(buy|beli|invest|investasi|nabung|topup|top up)\s+/i, '').trim() || desc;
+// Rapikan catatan lama yang dulu jatuh ke Others karena kamusnya belum lengkap.
+function recategorize() {
+  let changed = false;
+  for (const t of Object.values(state.tx)) {
+    if (t.type !== 'expense' || (t.cat && t.cat !== 'lainnya' && CAT[t.cat])) continue;
+    if (isInvest(t.desc) && !state.kw[norm(t.desc)]) { t.type = 'saving'; t.cat = null; t.target = investTarget(t.desc); t.desc = t.target; t.u = Date.now(); changed = true; continue; }
+    const c = categorize(t.desc);
+    if (c !== 'lainnya' || !t.cat) { if (c !== t.cat) { t.cat = c; t.u = Date.now(); changed = true; } }
+  }
+  return changed;
 }
 
 function parseEntry(text) {
@@ -133,6 +163,7 @@ function parseEntry(text) {
       break;
     }
   }
+  if (type === 'expense' && isInvest(toks.join(' '))) { type = 'saving'; if (/^(buy|beli|invest|investasi)$/i.test(toks[0] || '') && toks.length > 1) toks.shift(); }
   if ((type === 'saving' || type === 'give') && /^(ke|buat|untuk|kepada)$/i.test(toks[0] || '')) toks.shift();
   let desc = toks.join(' ').trim();
   let target = '';
@@ -324,7 +355,9 @@ const cloud = {
       merged.owner = this.user.id;
       state = merged;
       saveLocal();
-      if (localChanged) render();
+      const fixed = recategorize();
+      if (fixed) saveLocal();
+      if (localChanged || fixed) render();
       if (!remote || !same(merged, remote)) {
         const res = await this.client.from('finance_data').upsert({ user_id: this.user.id, data: strip(merged), updated_at: new Date().toISOString() });
         if (res.error) throw res.error;
@@ -346,7 +379,7 @@ const cloud = {
   },
 };
 
-function showApp() { $('#gate').hidden = true; $('#app').hidden = false; render(); fetchRate(); }
+function showApp() { $('#gate').hidden = true; $('#app').hidden = false; if (recategorize()) { saveLocal(); cloud.queue(); } render(); fetchRate(); }
 function showGate() { $('#app').hidden = true; $('#gate').hidden = false; }
 
 /* ---------- Render ---------- */
