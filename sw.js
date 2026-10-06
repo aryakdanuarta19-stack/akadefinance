@@ -1,5 +1,5 @@
 // Menyimpan tampilan web supaya tetap bisa dibuka tanpa internet.
-const CACHE = 'akade-finance-v18';
+const CACHE = 'akade-finance-v19';
 const SHELL = ['./', 'index.html', 'styles.css', 'app.js', 'config.js', 'manifest.webmanifest', 'icon.svg', 'icon-192.png'];
 
 self.addEventListener('install', e => {
